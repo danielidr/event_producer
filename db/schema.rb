@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_06_03_214726) do
     t.string "name"
     t.integer "members"
     t.date "debut"
-    t.integer "type", default: 0
+    t.integer "group_type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

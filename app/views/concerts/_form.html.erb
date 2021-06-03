@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :group_id %>
-    <%= form.text_field :group_id %>
+    <%= form.label :group %>
+    <%= form.collection_select :group_id, @groups, :id, :name, prompt: "Select group"%>
   </div>
 
   <div class="actions">

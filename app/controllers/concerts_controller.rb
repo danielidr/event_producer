@@ -1,5 +1,6 @@
 class ConcertsController < ApplicationController
   before_action :set_concert, only: %i[ show edit update destroy ]
+  before_action :set_groups, only: %i[ edit new create update ]
 
   # GET /concerts or /concerts.json
   def index
@@ -62,8 +63,13 @@ class ConcertsController < ApplicationController
       @concert = Concert.find(params[:id])
     end
 
+    def set_groups
+      @groups = Group.all
+    end
+
     # Only allow a list of trusted parameters through.
     def concert_params
       params.require(:concert).permit(:concert_date, :duration, :audience, :group_id)
     end
+
 end

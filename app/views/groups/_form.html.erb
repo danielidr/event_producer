@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
     <%= form.label :members %>
     <%= form.number_field :members %>
   </div>
@@ -22,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :type %>
-    <%= form.number_field :type %>
+    <%= form.label :group_type %>
+    <%= form.number_field :group_type %>
   </div>
 
   <div class="actions">
