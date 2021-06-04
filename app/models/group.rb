@@ -17,14 +17,17 @@ class Group < ApplicationRecord
     end
 
     def last_concert
-        Concert.maximum(:concert_date).strftime("%Y,%B,%A")
+        #Concert.maximum(:concert_date).strftime("%Y,%B,%A")
+        Concert.order('concert_date DESC').first.concert_date.strftime("%Y,%B,%A")
     end
     
     def max_audience
-        Concert.maximum(:audience)
+        #Concert.maximum(:audience)
+        Concert.order('audience DESC').first.audience
     end
     
     def max_duration
-        Concert.maximum(:duration)
+        #Concert.maximum(:duration)
+        Concert.order('duration DESC').first.duration
     end
 end
