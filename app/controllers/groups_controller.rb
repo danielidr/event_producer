@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: %i[ show edit update destroy ]
+  before_action :set_group_type, only: %i[edit new create]
 
   # GET /groups or /groups.json
   def index
@@ -61,6 +62,11 @@ class GroupsController < ApplicationController
     def set_group
       @group = Group.find(params[:id])
     end
+
+    def set_group_type
+      @group_types = Group.group_types.keys
+    end
+    
 
     # Only allow a list of trusted parameters through.
     def group_params

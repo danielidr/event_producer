@@ -5,9 +5,13 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Members</th>
       <th>Debut</th>
       <th>Type</th>
+      <th>Number of concerts</th>
+      <th>Concert</th>
+      <th>Audience</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +19,17 @@
   <tbody>
     <% @groups.each do |group| %>
       <tr>
+        <td><%= group.name %></td>
         <td><%= group.members %></td>
         <td><%= group.debut %></td>
         <td><%= group.group_type %></td>
+        <td><%= group.concerts_count %></td>
+        <td><% group.concerts.each do |concert|%>
+          <%= concert.name %><br>
+        <% end %> </td>
+        <td><% group.concerts.each do |concert|%>
+          <%= concert.audience %><br>
+        <% end %> </td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>

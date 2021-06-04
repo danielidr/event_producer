@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Concert date</th>
       <th>Duration</th>
       <th>Audience</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @concerts.each do |concert| %>
       <tr>
+        <td><%= concert.name %></td>
         <td><%= concert.concert_date %></td>
         <td><%= concert.duration %></td>
         <td><%= concert.audience %></td>
