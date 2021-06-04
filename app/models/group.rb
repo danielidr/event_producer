@@ -13,21 +13,34 @@ class Group < ApplicationRecord
 
     def concerts_this_month
         this_month = Time.now.month
-        Concert.where('extract(month from concert_date) = ?', this_month).count
+        concerts.where('extract(month from concert_date) = ?', this_month).count
     end
 
     def last_concert
-        #Concert.maximum(:concert_date).strftime("%Y,%B,%A")
-        Concert.order('concert_date DESC').first.concert_date.strftime("%Y,%B,%A")
+        max_concert = concerts.maximum(:concert_date)
+        if max_concert != nil
+            date_max_concert = max_concert.strftime("%Y,%B,%A")
+        else
+            return 'This group does not have any concert'
+        end
+        date_max_concert
     end
     
     def max_audience
-        #Concert.maximum(:audience)
-        Concert.order('audience DESC').first.audience
+        m_audience = concerts.maximum(:audience)
+        if m_audience != nil
+            return m_audience
+        else
+            return '---'
+        end
     end
     
     def max_duration
-        #Concert.maximum(:duration)
-        Concert.order('duration DESC').first.duration
+        m_duration = concerts.maximum(:duration)
+        if m_duration != nil
+            return m_duration
+        else
+            return '---'
+        end
     end
 end

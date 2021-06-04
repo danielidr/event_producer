@@ -13,40 +13,41 @@
       <strong>Members:</strong>
       <%= @group.members %>
     </p>
+  </div>
     
+  <div class="col-6">
     <p>
       <strong>Debut:</strong>
       <%= @group.debut %>
     </p>
-    
+      
     <p>
       <strong>Type:</strong>
       <%= @group.group_type %>
     </p>
   </div>
-  
-  <div class="col-6">
-    <p>
-      <strong>Concerts this month:</strong>
-      <%= @group.concerts_this_month %>
-    </p>
-    
-    <p>
-      <strong>Latest concert:</strong>
-      <%= @group.last_concert %>
-    </p>
-    
-    <p>
-      <strong>Max audience:</strong>
-      <%= @group.max_audience %>
-    </p>
-    
-    <p>
-      <strong>Max concert duration:</strong>
-      <%= @group.max_duration %>
-    </p>
-  </div>
-  
+
+  <table class="table mt-4">
+  <thead class="thead-dark">
+    <tr>
+      <th>Concerts this month:</th>
+      <th>Latest concert:</th>
+      <th>Max audience:</th>
+      <th>Max concert duration:</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @group.concerts_this_month %></td>
+        <td><%= @group.last_concert %></td>
+        <td><%= @group.max_audience %></td>
+        <td><%= @group.max_duration %></td>
+      </tr>
+  </tbody>
+  </table>
+
 </div>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
