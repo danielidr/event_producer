@@ -1,44 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
+<h1 class="text-center pb-4">Showing Group</h1>
 
-<p>
-  <strong>Members:</strong>
-  <%= @group.members %>
-</p>
-
-<p>
-  <strong>Debut:</strong>
-  <%= @group.debut %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @group.group_type %>
-</p>
-
-<p>
-  <strong>Concerts this month:</strong>
-  <%= @group.concerts_this_month %>
-</p>
-
-<p>
-  <strong>Latest concert:</strong>
-  <%= @group.last_concert %>
-</p>
-
-<p>
-  <strong>Max audience:</strong>
-  <%= @group.max_audience %>
-</p>
-
-<p>
-  <strong>Max concert duration:</strong>
-  <%= @group.max_duration %>
-</p>
+<div class="container row py-4">
+  <div class="col-6">
+    <p>
+      <strong>Name:</strong>
+      <%= @group.name %>
+    </p>
+    
+    <p>
+      <strong>Members:</strong>
+      <%= @group.members %>
+    </p>
+    
+    <p>
+      <strong>Debut:</strong>
+      <%= @group.debut %>
+    </p>
+    
+    <p>
+      <strong>Type:</strong>
+      <%= @group.group_type %>
+    </p>
+  </div>
+  
+  <div class="col-6">
+    <p>
+      <strong>Concerts this month:</strong>
+      <%= @group.concerts_this_month %>
+    </p>
+    
+    <p>
+      <strong>Latest concert:</strong>
+      <%= @group.last_concert %>
+    </p>
+    
+    <p>
+      <strong>Max audience:</strong>
+      <%= @group.max_audience %>
+    </p>
+    
+    <p>
+      <strong>Max concert duration:</strong>
+      <%= @group.max_duration %>
+    </p>
+  </div>
+  
+</div>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

@@ -1,6 +1,7 @@
 class Group < ApplicationRecord
     has_many :concerts, dependent: :destroy
     enum group_type: [ :Band, :Women, :Men]
+    validates_presence_of :name, :members
 
     def to_s
         name

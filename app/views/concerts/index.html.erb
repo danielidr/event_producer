@@ -2,8 +2,8 @@
 
 <h1>Concerts</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Concert date</th>
@@ -22,9 +22,9 @@
         <td><%= concert.duration %></td>
         <td><%= concert.audience %></td>
         <td><%= concert.group %></td>
-        <td><%= link_to 'Show', concert %></td>
-        <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
-        <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', concert, class: 'btn btn-dark btn-sm text-light' %></td>
+        <td><%= link_to 'Edit', edit_concert_path(concert), class: 'btn btn-dark btn-sm text-light' %></td>
+        <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm text-light' %></td>
       </tr>
     <% end %>
   </tbody>

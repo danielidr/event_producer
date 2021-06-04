@@ -11,25 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="container">
+    <div class="row">
+      <div class="form-group col-4">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+    
+      <div class="form-group col-4">
+        <%= form.label :members %>
+        <%= form.number_field :members, class: "form-control" %>
+      </div>
+    </div>
+    
 
-  <div class="field">
-    <%= form.label :members %>
-    <%= form.number_field :members %>
-  </div>
+    <div class="form-group">
+      <%= form.label :debut %>
+      <%= form.date_select :debut, class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+      <%= form.label :group_type %>
+      <%= form.select :group_type, options_for_select(@group_types), class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :debut %>
-    <%= form.date_select :debut %>
   </div>
-
-  <div class="field">
-    <%= form.label :group_type %>
-    <%= form.select :group_type, options_for_select(@group_types) %>
-  </div>
+  
 
   <div class="actions">
     <%= form.submit %>

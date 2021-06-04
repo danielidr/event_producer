@@ -2,8 +2,8 @@
 
 <h1>Groups</h1>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Members</th>
@@ -30,9 +30,9 @@
         <td><% group.concerts.each do |concert|%>
           <%= concert.audience %><br>
         <% end %> </td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', group, class: 'btn btn-dark btn-sm text-light' %></td>
+        <td><%= link_to 'Edit', edit_group_path(group), class: 'btn btn-dark btn-sm text-light' %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm text-light' %></td>
       </tr>
     <% end %>
   </tbody>
